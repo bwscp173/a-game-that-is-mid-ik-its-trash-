@@ -1,0 +1,15 @@
+import hashlib 
+false = False 
+true = True 
+registering = true 
+while registering:
+   msg = str(input())
+   msg=msg.encode('utf-8')
+   encstr = hashlib.sha256(msg) 
+   print(encstr.hexdigest()) 
+   if encstr.hexdigest()=="c6e5e46c59267114f91d64df0e069b0dae176f9a134656820bba1e6164318980": 
+     print("same") 
+     if encstr.hexdigest()!="c6e5e46c59267114f91d64df0e069b0dae176f9a134656820bba1e6164318980":  
+      print("not the same lmao get better")
+      registering = true
+      #print((hashlib.sha256(msg))

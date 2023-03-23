@@ -1,0 +1,51 @@
+#import random
+#import maths
+
+#user=str(input("what is your name?"))
+#passw=str(input("what is your pass"))
+#if user=="admin":
+#  if passw=="admin123":
+#    print("k lol")
+import sha56
+import base64
+message="message"
+a=base64.encode(message)
+print(a)
+#from cryptography.fernet import Fernet
+#import time
+def em(message):
+  file=open("key.key","rb")#rb = read bytes
+  #key=file.read()
+  #file.close()
+
+
+  #from cryptography.fernet import Fernet
+  #message = "my deep dark secret".encode()
+
+  #f = Fernet(key)
+  #encrypted = f.encrypt(message)
+  #print(encrypted)
+  #encode
+  #message=input("type stuff:")
+  #encoded=message.encode()
+  #print("encoded:",encoded)
+  #encrypt
+  #f=Fernet(key)
+  #encrypted=f.encrypt(encoded)
+  ##print(f)
+  #print("your encrypted message is",encrypted)
+
+  #return encrypted
+
+
+
+user=str(input("username:"))
+print("password:")
+passw=str(input())
+
+if user=="bob":
+  newpassw=em(passw)
+  #print(a)
+  #print(newpassw)
+  if newpassw=="b'gAAAAABiAkNJFMbdRgMGvZZtZEKuwbOYMYInmCwtwLlWaZFtEBYMXScKp8mghj0KsPRzp4Lu2nrj7QKt8D_SgMas2rUyqQLVLA==":
+    print("DONE!")

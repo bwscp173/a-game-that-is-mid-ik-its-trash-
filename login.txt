@@ -1,0 +1,48 @@
+import hashlib
+import random
+false = False
+true = True
+allowed=False
+
+registering = true
+db=[["6700869c8ff7480e34a70a708b028700dbaa3a033b5652b903afe89f49a31456","c6e5e46c59267114f91d64df0e069b0dae176f9a134656820bba1e6164318980"],["d24933106396dd933c4a2a1a6bb5935fa86d13536d2d89c7e148b158bc34c647","a2fa4cfad054c30de64ae9fd9807b2bb562eb12619b66d0bcf9629cd8c969fe0"]]#me then cain username then password
+def encrypt(msg):
+  return hashlib.sha256(msg.encode('utf-8')).hexdigest()
+
+
+def checkuser(username,password):
+  for i in range(len(db)):# repeats 2 times because 2 users
+    #user=db[i]
+    for j in range(1):#repeats 4 times because 2 users 2 peices of information
+      user=db[i][0]
+      passw=db[i][1]
+      if user==username:
+        if passw==password:
+          print("they are the same")
+          return True
+      if user!=username or passw==password:
+        print("not the same")
+      #print("user"+user)
+      #print("passw"+passw)
+def login():
+  username=str(input("username:"))
+  password=encrypt(str(input  ("password:")))
+  allowed=checkuser(encrypt(username),password)
+  return allowed,username
+while allowed==False:
+  allowed,username=login()
+  if allowed==True:
+    print("welcome,"+username)
+#while True:
+#  for i in range(random.randint(0,999):
+#    login()
+while allowed:
+  allowed,username=login()
+  if allowed==True:
+    print("welcome,"+username)
+
+#print(encrypt("idk how this works"))
+
+
+
+#print((hashlib.sha256(msg))
